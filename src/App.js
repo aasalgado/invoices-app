@@ -19,13 +19,13 @@ class App extends Component {
                 "Invoice" : "1234",
                 "Date" : "08/21/2019"
             },
-            {
-                "id" : "102",
-                "Vendor" : "Hankook",
-                "Amount" : "$18,000",
-                "Invoice" : "1234",
-                "Date" : "08/21/2019"
-            },
+            // {
+            //     "id" : "102",
+            //     "Vendor" : "Hankook",
+            //     "Amount" : "$18,000",
+            //     "Invoice" : "1234",
+            //     "Date" : "08/21/2019"
+            // },
         ]
      }
 
