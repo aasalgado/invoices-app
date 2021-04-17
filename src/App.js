@@ -68,14 +68,16 @@ class App extends Component {
                 </div>
                 <div className="row">
                     <div className=".col-xs-12 center text-center">
-                        <Table dark responsive stripped bordered hover>
+                        <Table dark responsive striped bordered hover>
                             <thead>
-                                <th>Vendor</th>
-                                <th>Amount</th>
-                                <th>Invoice #</th>
-                                <th>Date</th>
-                                <th colSpan="4">Actions</th>
-                                <th>Image</th>
+                                <tr>
+                                    <th>Vendor</th>
+                                    <th>Amount</th>
+                                    <th>Invoice #</th>
+                                    <th>Date</th>
+                                    <th colSpan="4">Actions</th>
+                                    <th>Image</th>
+                                </tr>
                             </thead>
                             <tbody>
                                 {this.state.invoices.length === 0 ? <td colSpan="9">All caught up!</td> : invoices}
