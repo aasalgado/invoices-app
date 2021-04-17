@@ -51,11 +51,11 @@ class App extends Component {
                 <td>{invoice.Amount}</td>
                 <td>{invoice.Invoice}</td>
                 <td>{invoice.Date}</td>
-                <td><Button className="btn btn-lg btn-success" onClick={() => this.remove(invoice.id)}> OK </Button></td>
-                <td><Button className="btn btn-lg btn-danger" onClick={() => this.remove(invoice.id)}> NOK </Button></td>
-                <td><Button className="btn btn-lg btn-info" onClick={() => this.remove(invoice.id)}> 50% </Button></td>
-                <td><Button className="btn btn-lg btn-warning" onClick={() => this.remove(invoice.id)}> ?? </Button></td>
-                <td><Button className="btn btn-lg btn-info" onClick={() => this.remove(invoice.id)}> Image </Button></td>
+                <td><Button className="btn btn-lg btn-success" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faThumbsUp} /> OK </Button></td>
+                <td><Button className="btn btn-lg btn-danger" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faThumbsDown} /> NOK </Button></td>
+                <td><Button className="btn btn-lg btn-info" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faMoneyCheckAlt} /> 50% </Button></td>
+                <td><Button className="btn btn-lg btn-warning" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faSearchDollar} /> ?? </Button></td>
+                <td><Button className="btn btn-lg btn-info" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faImage} /> Image </Button></td>
             </tr>
             )
 
