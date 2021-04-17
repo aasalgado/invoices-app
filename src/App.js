@@ -11,28 +11,28 @@ class App extends Component {
                 "id" : "100",
                 "Vendor" : "Hankook",
                 "Amount" : "$18,000",
-                "Invoice" : "1234",
+                "invoice" : "1234",
                 "Date" : "08/21/2019"
             },
             {
                 "id" : "200",
                 "Vendor" : "Hankook",
-                "Amount" : "$18,000",
-                "Invoice" : "1234",
+                "Amount" : "$20,000",
+                "invoice" : "1234",
                 "Date" : "08/21/2019"
             },
             {
                 "id" : "300",
                 "Vendor" : "Hankook",
-                "Amount" : "$18,000",
-                "Invoice" : "1234",
+                "Amount" : "$30,000",
+                "invoice" : "1234",
                 "Date" : "08/21/2019"
             },
         ]
      }
 
-     remove(id) {
-         let updatedInvoices = [...this.invoices].filter( x => x.id !== id);
+     remove(id){
+         let updatedInvoices = [...this.state.invoices].filter( x => x.id !== id);
          this.setState({invoices : updatedInvoices});
      }
 
@@ -51,11 +51,11 @@ class App extends Component {
                 <td>{invoice.Amount}</td>
                 <td>{invoice.Invoice}</td>
                 <td>{invoice.Date}</td>
-                <td><Button className="btn btn-lg btn-success" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faThumbsUp} /> OK </Button></td>
-                <td><Button className="btn btn-lg btn-danger" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faThumbsDown} /> NOK </Button></td>
-                <td><Button className="btn btn-lg btn-info" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faMoneyCheckAlt} /> 50% </Button></td>
-                <td><Button className="btn btn-lg btn-warning" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faSearchDollar} /> ?? </Button></td>
-                <td><Button className="btn btn-lg btn-info" onClick={() => this.remove(invoice.id)}> <FontAwesomeIcon icon={faImage} /> Image </Button></td>
+                <td><Button className="btn btn-lg btn-success" onClick={ () => this.remove(invoice.id)}> <FontAwesomeIcon icon={faThumbsUp} /> OK </Button></td>
+                <td><Button className="btn btn-lg btn-danger" onClick={ () => this.remove(invoice.id)}> <FontAwesomeIcon icon={faThumbsDown} /> NOK </Button></td>
+                <td><Button className="btn btn-lg btn-info" onClick={ () => this.remove(invoice.id)}> <FontAwesomeIcon icon={faMoneyCheckAlt} /> 50% </Button></td>
+                <td><Button className="btn btn-lg btn-warning" onClick={ () => this.remove(invoice.id)}> <FontAwesomeIcon icon={faSearchDollar} /> ?? </Button></td>
+                <td><Button className="btn btn-lg btn-info" onClick={ () => this.remove(invoice.id)}> <FontAwesomeIcon icon={faImage} /> Image </Button></td>
             </tr>
             )
 
