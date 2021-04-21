@@ -4,36 +4,47 @@ import { faImage, faThumbsUp, faThumbsDown, faMoneyCheckAlt, faSearchDollar } fr
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 class App extends Component {
-    state = { 
-        isLoading : false,
-        invoices : [
-            {
-                "id" : "100",
-                "Vendor" : "Hankook",
-                "Amount" : "$18,000",
-                "invoice" : "1234",
-                "Date" : "08/21/2019"
-            },
-            {
-                "id" : "200",
-                "Vendor" : "Hankook",
-                "Amount" : "$20,000",
-                "invoice" : "1234",
-                "Date" : "08/21/2019"
-            },
-            {
-                "id" : "300",
-                "Vendor" : "Hankook",
-                "Amount" : "$30,000",
-                "invoice" : "1234",
-                "Date" : "08/21/2019"
-            },
-        ]
-     }
+    // state = { 
+    //     isLoading : false,
+    //     invoices : [
+    //         {
+    //             "id" : "100",
+    //             "Vendor" : "Hankook",
+    //             "Amount" : "$18,000",
+    //             "invoice" : "1234",
+    //             "Date" : "08/21/2019"
+    //         },
+    //         {
+    //             "id" : "200",
+    //             "Vendor" : "Hankook",
+    //             "Amount" : "$20,000",
+    //             "invoice" : "1234",
+    //             "Date" : "08/21/2019"
+    //         },
+    //         {
+    //             "id" : "300",
+    //             "Vendor" : "Hankook",
+    //             "Amount" : "$30,000",
+    //             "invoice" : "1234",
+    //             "Date" : "08/21/2019"
+    //         },
+    //     ]
+    //  }
+
+    state = {
+        isLoading: false,
+        invoices: [],
+    }
 
      remove(id){
          let updatedInvoices = [...this.state.invoices].filter( x => x.id !== id);
          this.setState({invoices : updatedInvoices});
+     }
+
+     async componentDidMount() {
+         const response = await fetch('https://lanxg56g2b.execute-api.us-west-1.amazonaws.com/Dev');
+         const body = await response.json();
+         this.setState({invoices : body, isLoading : false})
      }
 
     render() { 
